@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="포지티는 육아·가족 크리에이터 매니지먼트 회사입니다. 브랜디드 콘텐츠와 크리에이터 마켓을 기획부터 결산까지 맡습니다.">
+<meta property="og:title" content="POSITI — Family creator management">
+<meta property="og:description" content="가족의 하루가 가장 정직한 리뷰입니다.">
+<meta property="og:image" content="https://positi.kr/img/sukyung.jpg">
+<meta property="og:url" content="https://positi.kr/">
+<meta name="theme-color" content="#4A3A30">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%234A3A30'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='40' fill='%23EEEAE3'%3EP%3C/text%3E%3C/svg%3E">
+<title>POSITI Creator Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300;500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap">
+<style>
+/* 레이아웃: 먹색 첫 화면(잘린 대형 워드마크) → 종이 → 벽돌 띠 한 번 → 종이 → 먹색 진행 → 종이 문의. 12칸 비대칭, 크기 차이로 위계 */
+:root{
+  --paper:#EEEAE3;      /* 밝은 리넨 바탕 */
+  --hero:#4A3A30;       /* 원목 밤색: 첫 화면·진행 순서 */
+  --hero-mute:#C7B3A2;
+  --ink:#1E1B18;
+  --ink-soft:#56453A;   /* 먹색 위 대형 워드마크 */
+  --mute:#776F66;
+  --mute-ink:#BFA996;   /* 먹색 위 보조 글자 */
+  --rule:#D3CCC1;
+  --rule-ink:#655247;
+  --brick:#A3412A;      /* 브랜드 컬러: '왜 가족 크리에이터' 띠 한 곳 */
+  --kr:"Hahmlet","Nanum Myeongjo",serif;
+  --en:"Newsreader","Times New Roman",serif;
+  --body:"IBM Plex Sans KR","Apple SD Gothic Neo",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;word-break:keep-all;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1360px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media(min-width:900px){.wrap{padding-left:max(56px,env(safe-area-inset-left,0px));padding-right:max(56px,env(safe-area-inset-right,0px))}}
+.g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+@media(max-width:599px){.g{column-gap:12px}}
+a{color:inherit}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.lab{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.dark{background:var(--hero);color:#F1EBE4}
+.dark .lab{color:var(--mute-ink)}
+.k{font-family:var(--kr);font-weight:500;letter-spacing:-.03em;margin:0;text-wrap:balance}
+
+/* ── 첫 화면 ── */
+.hero{position:relative;overflow:hidden;padding-top:env(safe-area-inset-top,0px)}
+.bar{display:flex;justify-content:space-between;align-items:baseline;padding-block:26px;border-bottom:1px solid var(--rule-ink)}
+.mark{font-family:var(--en);font-size:26px;letter-spacing:.04em;text-decoration:none}
+nav{display:flex;gap:28px}
+nav a{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--mute-ink)}
+nav a:hover{color:#F1EBE4}
+@media(max-width:899px){nav a:not(.c){display:none}}
+.meta{padding-block:18px;display:flex;gap:40px;flex-wrap:wrap}
+.hero h1{grid-column:1/9;font-size:clamp(34px,5.2vw,76px);line-height:1.18;padding-top:64px}
+.hero h1 em{font-style:normal;color:var(--hero-mute)}
+.hero .side{grid-column:10/13;align-self:end;font-size:15px;line-height:1.8;color:#DCCFC3;padding-bottom:8px}
+.hero .side p{margin:0 0 20px}
+.hero .side a{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-underline-offset:5px;color:#F1EBE4}
+.giant{font-family:var(--en);font-weight:300;font-size:31vw;line-height:.74;letter-spacing:-.04em;color:var(--ink-soft);margin:64px 0 -4.2vw -1.2vw;white-space:nowrap;user-select:none;pointer-events:none}
+.giant i{font-style:italic}
+@media(min-width:1600px){.giant{font-size:496px;margin-bottom:-68px}}
+@media(max-width:899px){.hero h1{grid-column:1/13;padding-top:48px}.hero .side{grid-column:1/13;margin-top:28px}.meta{gap:18px}}
+
+/* ── 파트너 흐르는 줄 ── */
+.ticker{border-bottom:1px solid var(--rule);overflow:hidden;padding-block:22px;white-space:nowrap}
+.ticker .run{display:inline-flex;align-items:center;gap:72px;padding-right:72px;animation:run 48s linear infinite}
+.ticker .ti{display:inline-flex;align-items:center;height:34px}
+.ticker img{height:calc(var(--h)*1px);width:auto;max-width:none;flex:none;filter:grayscale(1) brightness(0);opacity:.82}
+.ticker .txt{font-family:var(--kr);font-weight:700;font-size:20px;color:#55544F;opacity:.85}
+@keyframes run{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker .run{animation:none}}
+
+/* ── 공통 섹션 ── */
+.sec{padding-block:120px}
+@media(max-width:899px){.sec{padding-block:72px}}
+.sec-head{grid-column:1/13;display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);padding-top:16px;margin-bottom:64px}
+.dark .sec-head{border-color:#F1EBE4}
+
+/* ── 왜 가족 크리에이터 (벽돌 띠) ── */
+.why{background:var(--paper);color:var(--ink)}
+.why .lab{color:var(--mute)}
+.why .q{grid-column:1/11;font-family:var(--kr);font-weight:300;font-size:clamp(30px,4.2vw,60px);line-height:1.38;letter-spacing:-.025em;margin:0;text-wrap:balance}
+.why .q b{font-weight:700;color:var(--hero)}
+.why .foot p{margin:0}
+.why .foot p+p{margin-top:22px}
+.why .foot{grid-column:7/13;margin-top:56px;font-size:16px;line-height:1.85;color:#4A433C}
+@media(max-width:899px){.why .q,.why .foot{grid-column:1/13}}
+
+/* ── 크리에이터 ── */
+.creator .por{grid-column:1/6;aspect-ratio:4/5;max-width:100%;background:var(--hero);color:#F1EBE4;position:relative;overflow:hidden}
+.por .mono{position:absolute;left:-4%;bottom:-12%;font-family:var(--en);font-style:italic;font-weight:300;font-size:min(34vw,440px);line-height:1;color:var(--ink-soft)}
+.por .tag{position:absolute;left:24px;top:22px}
+.por .tag2{position:absolute;right:24px;bottom:22px;color:var(--mute-ink)}
+.por .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;clip-path:inset(100% 0 0 0);transform:scale(1.08);transition:clip-path .9s cubic-bezier(.7,0,.2,1),transform 1.4s cubic-bezier(.2,.7,.2,1);z-index:1}
+.por .mono{transition:transform 1s cubic-bezier(.7,0,.2,1),opacity .6s}
+.por .tag,.por .tag2{z-index:2;transition:color .4s}
+.por .hint{position:absolute;right:24px;top:22px;z-index:2;transition:opacity .4s}
+.por{cursor:pointer}
+.por:hover .photo,.por:focus-visible .photo,.por.on .photo{clip-path:inset(0 0 0 0);transform:scale(1)}
+.por:hover .mono,.por:focus-visible .mono,.por.on .mono{transform:translateY(-14%);opacity:0}
+.por:hover .hint,.por.on .hint{opacity:0}
+.por:hover .tag2,.por.on .tag2{color:#F1EBE4}
+@media(prefers-reduced-motion:reduce){.por .photo,.por .mono{transition:none}}
+.creator .info{grid-column:7/13;min-width:0;align-self:end}
+.creator .no{font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:.1em}
+.creator h2{font-size:clamp(56px,7vw,104px);line-height:1;margin-top:18px}
+.creator .en{font-family:var(--en);font-style:italic;font-size:28px;color:var(--mute);margin:10px 0 48px}
+.dl{border-top:1px solid var(--ink)}
+.dl div{display:grid;grid-template-columns:120px 1fr;gap:16px;padding-block:16px;border-bottom:1px solid var(--rule);font-size:15px}
+.dl dt{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);padding-top:3px}
+.dl dd{margin:0}
+.dl .ser{display:grid;gap:0}
+.dl .ser span{display:grid;grid-template-columns:8.5em 1fr auto;gap:12px;align-items:baseline;padding-block:7px;border-bottom:1px dashed var(--rule)}
+.dl .ser span:first-child{padding-top:0}
+.dl .ser span:last-child{border-bottom:0;padding-bottom:0}
+.dl .ser i{font-family:var(--en);font-style:italic;font-size:15px;color:var(--mute)}
+.dl .ser b{font-weight:500}
+.dl .sernote{display:block;margin-top:10px;font-size:13px;color:var(--mute)}
+.dl .ser em{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--mute);white-space:nowrap}
+@media(max-width:599px){.dl .ser span{grid-template-columns:1fr auto}.dl .ser i{grid-column:1/-1}}
+@media(max-width:899px){.creator .por,.creator .info{grid-column:1/13}.creator .info{margin-top:40px}.dl div{grid-template-columns:96px 1fr}}
+
+/* ── 파트너 표 ── */
+.partners .cells{grid-column:1/13;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink);border-left:1px solid var(--rule)}
+.cell{position:relative;aspect-ratio:3/2;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:center;padding:28px;min-width:0}
+.cell .cat{position:absolute;left:14px;top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.cell .nm{font-family:var(--kr);font-weight:500;font-size:clamp(17px,1.7vw,24px);color:#4A433C;text-align:center}
+.cell img{height:calc(var(--h)*1px);width:auto;max-width:none;flex:none;filter:grayscale(1) brightness(0);opacity:.82}
+.cell:hover img{opacity:1}
+.cell.w2{grid-column:span 2;aspect-ratio:auto}
+.cell.cta{grid-column:1/-1;aspect-ratio:auto;padding-block:40px 28px;justify-content:space-between;align-items:flex-end;text-decoration:none;background:var(--hero);color:#F1EBE4}
+.cell.cta .nm{color:#F1EBE4;text-align:left;font-weight:300}
+.cell.cta .cat{color:var(--mute-ink)}
+.cell.cta .arr{font-family:var(--en);font-size:40px;line-height:1}
+.cell.cta:hover{background:#3F3128}
+@media(max-width:899px){.partners .cells{grid-template-columns:repeat(2,minmax(0,1fr))}.cell img{height:calc(var(--h)*.72px)}}
+
+/* ── 하는 일 ── */
+.svc{grid-column:1/13;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding-block:56px;border-top:1px solid var(--rule)}
+.svc:first-of-type{border-top:1px solid var(--ink)}
+.svc .t{grid-column:1/8}
+.svc .t .en{display:block;font-family:var(--en);font-style:italic;font-weight:300;font-size:clamp(48px,6.6vw,96px);line-height:1;letter-spacing:-.02em}
+.svc .t .kr{display:block;font-family:var(--kr);font-weight:500;font-size:22px;margin-top:16px}
+.svc .d{grid-column:8/13;align-self:end;min-width:0}
+.svc.rev .t{grid-column:6/13;text-align:right;order:2}
+.svc.rev .d{grid-column:1/6;order:1}
+.svc p{margin:0 0 22px;font-size:16px}
+.svc ul{margin:0;padding:0;list-style:none;font-size:14px;border-top:1px solid var(--ink)}
+.svc li{display:flex;justify-content:space-between;padding-block:11px;border-bottom:1px solid var(--rule)}
+.svc li span{font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.08em}
+@media(max-width:899px){.svc .t,.svc .d,.svc.rev .t,.svc.rev .d{grid-column:1/13;text-align:left;order:0}.svc .d{margin-top:28px}}
+
+/* ── 진행 순서 (먹색) ── */
+.steps{grid-column:1/13;margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));column-gap:24px}
+.steps li{border-top:1px solid var(--rule-ink);padding-top:20px;min-width:0}
+.steps .d{display:block;font-family:var(--en);font-weight:300;font-size:clamp(40px,4.4vw,64px);line-height:1;letter-spacing:-.02em}
+.steps b{display:block;font-family:var(--kr);font-weight:500;font-size:20px;margin:36px 0 8px}
+.steps span{font-size:14px;line-height:1.7;color:#D6C7BA;display:block}
+.process h2{grid-column:1/9;font-size:clamp(34px,4vw,56px);line-height:1.2;margin-bottom:72px}
+@media(max-width:899px){.steps{grid-template-columns:1fr 1fr;row-gap:36px}.process h2{grid-column:1/13}}
+
+/* ── 문의 ── */
+.contact .lead{grid-column:1/8;font-family:var(--kr);font-weight:300;font-size:clamp(24px,2.6vw,36px);line-height:1.45;margin:0 0 56px}
+.email{grid-column:1/13;font-family:var(--en);font-weight:300;font-size:clamp(40px,9vw,140px);line-height:1;letter-spacing:-.02em;word-break:break-all;user-select:all;border-bottom:2px solid var(--ink);padding-bottom:24px}
+.who{grid-column:1/7;margin-top:28px;font-size:15px}
+.who b{font-weight:500}
+.copy{grid-column:10/13;margin-top:24px;justify-self:end;align-self:start;background:var(--ink);border:0;color:var(--paper);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;cursor:pointer}
+.copy:hover{background:var(--hero)}
+@media(max-width:899px){.contact .lead,.who{grid-column:1/13}.copy{grid-column:1/13;justify-self:start;margin-top:20px}}
+
+footer{padding-block:28px 40px;font-size:12px;color:var(--mute);border-top:1px solid var(--rule)}
+footer .g div:first-child{grid-column:1/8}
+footer .g div:last-child{grid-column:8/13;text-align:right;font-family:var(--mono)}
+@media(max-width:899px){footer .g div{grid-column:1/13!important;text-align:left!important}}
+</style>
+
+</head>
+<body>
+<header class="hero dark" id="top">
+  <div class="wrap">
+    <div class="bar">
+      <a class="mark" href="#top">POSITI</a>
+      <nav>
+        <a href="#creators">Creators</a>
+        <a href="#partners">Partners</a>
+        <a href="#services">Services</a>
+        <a class="c" href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="meta lab"><span>Family creator management</span><span>Seoul, KR</span><span>Est. 2023</span></div>
+    <div class="g">
+      <h1 class="k">가족의 하루가<br>가장 정직한<br><em>리뷰입니다.</em></h1>
+      <div class="side">
+        <p>포지티는 육아·가족 크리에이터 매니지먼트 회사입니다. 브랜디드 콘텐츠와 크리에이터 마켓을 기획부터 결산까지 맡습니다.</p>
+        <a href="#contact">협업 문의 →</a>
+      </div>
+    </div>
+  </div>
+  <div class="giant" aria-hidden="true">Posit<i>i</i></div>
+</header>
+
+<div class="ticker" aria-label="파트너 브랜드">
+  <div class="run"><span class="ti"><img src="logos/dyson.svg" alt="다이슨" style="--h:30"></span><span class="ti"><img src="logos/shark.svg" alt="샤크" style="--h:30"></span><span class="ti"><img src="logos/mcst.svg" alt="문화체육관광부" style="--h:30"></span><span class="ti"><img src="logos/andar.png" alt="안다르" style="--h:28"></span><span class="ti"><img src="logos/sidiz.svg" alt="시디즈" style="--h:24"></span><span class="ti"><img src="logos/demaf.png" alt="디마프" style="--h:28"></span><span class="ti"><img src="logos/poled.png" alt="폴레드" style="--h:28"></span><span class="ti"><img src="logos/hubbish.png" alt="허비쉬" style="--h:18"></span><span class="ti"><img src="logos/naturemedy.png" alt="네츄레메디" style="--h:22"></span><span class="ti"><img src="logos/sooneehome.png" alt="수니홈" style="--h:22"></span><span class="ti"><img src="logos/younglong.png" alt="영롱" style="--h:18"></span><span class="ti"><img src="logos/soopsori.png" alt="숲소리" style="--h:28"></span></div><div class="run" aria-hidden="true"><span class="ti"><img src="logos/dyson.svg" alt="다이슨" style="--h:30"></span><span class="ti"><img src="logos/shark.svg" alt="샤크" style="--h:30"></span><span class="ti"><img src="logos/mcst.svg" alt="문화체육관광부" style="--h:30"></span><span class="ti"><img src="logos/andar.png" alt="안다르" style="--h:28"></span><span class="ti"><img src="logos/sidiz.svg" alt="시디즈" style="--h:24"></span><span class="ti"><img src="logos/demaf.png" alt="디마프" style="--h:28"></span><span class="ti"><img src="logos/poled.png" alt="폴레드" style="--h:28"></span><span class="ti"><img src="logos/hubbish.png" alt="허비쉬" style="--h:18"></span><span class="ti"><img src="logos/naturemedy.png" alt="네츄레메디" style="--h:22"></span><span class="ti"><img src="logos/sooneehome.png" alt="수니홈" style="--h:22"></span><span class="ti"><img src="logos/younglong.png" alt="영롱" style="--h:18"></span><span class="ti"><img src="logos/soopsori.png" alt="숲소리" style="--h:28"></span></div>
+</div>
+
+<main>
+  <section class="why sec">
+    <div class="wrap g">
+      <div class="sec-head"><span class="lab">Why family creators</span><span class="lab">01</span></div>
+      <p class="q">아이가 있는 집은<br>까다로운 조건으로<br>엄선한 물건을 <b>매일, 오래</b> 씁니다.</p>
+      <div class="foot"><p>포지티 크리에이터는 제품을 먼저 생활에서 써 보고,<br>그 장면을 콘텐츠로 만듭니다.</p><p>그래서 브랜드가 쓴 설명서보다<br>크리에이터의 하루가 먼저 보입니다.</p></div>
+    </div>
+  </section>
+
+  <section class="creator sec" id="creators">
+    <div class="wrap g">
+      <div class="sec-head"><span class="lab">Creators</span><span class="lab">02</span></div>
+      <div class="por" tabindex="0" role="button" aria-label="김수경 크리에이터 사진 보기" id="por">
+        <img class="photo" src="img/sukyung.jpg" alt="김수경 크리에이터">
+        <span class="tag lab">Creator 01</span>
+        <span class="hint lab">Hover</span>
+        <span class="mono" aria-hidden="true">Sk</span>
+        <span class="tag2 lab">Parenting · Living</span>
+      </div>
+      <div class="info">
+        <div class="no">CREATOR 01 / ROSTER</div>
+        <h2 class="k">김수경</h2>
+        <div class="en">Kim Sukyung</div>
+        <dl class="dl">
+          <div><dt>Field</dt><dd>육아 · 살림 · 생활 리뷰</dd></div>
+          <div><dt>Channel</dt><dd>Instagram</dd></div>
+          <div><dt>Audience</dt><dd>첫아이를 키우는 30대 한국 엄마</dd></div>
+          <div><dt>Series</dt><dd class="ser"><span><i>Gear Review</i><b>아기띠 8종 · 바디워시 실사용 비교</b><em>육아 · 리빙 · 테크</em></span><span><i>Expert Talk</i><b>전문가와 함께하는 육아 인터뷰</b><em>키즈 · 교육</em></span><span><i>Sleep Project</i><b>아기 수면교육</b><em>홈 · 라이프스타일</em></span><span><i>Bath Routine</i><b>아기 목욕 루틴</b><em>뷰티 · 퍼스널케어</em></span><span><i>Home Reset</i><b>집 비우기 7일 챌린지</b><em>생활용품 · 가전 · 인테리어</em></span></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners sec" id="partners" style="padding-top:0">
+    <div class="wrap g">
+      <div class="sec-head"><span class="lab">Partners</span><span class="lab">03</span></div>
+      <div class="cells">
+        <div class="cell"><span class="cat">Home appliance</span><img src="logos/dyson.svg" alt="다이슨" style="--h:34"></div>
+        <div class="cell"><span class="cat">Home appliance</span><img src="logos/shark.svg" alt="샤크" style="--h:34"></div>
+        <div class="cell"><span class="cat">Government</span><img src="logos/mcst.svg" alt="문화체육관광부" style="--h:34"></div>
+        <div class="cell"><span class="cat">Apparel</span><img src="logos/andar.png" alt="안다르" style="--h:32"></div>
+        <div class="cell"><span class="cat">Furniture</span><img src="logos/sidiz.svg" alt="시디즈" style="--h:28"></div>
+        <div class="cell"><span class="cat">Skincare</span><img src="logos/demaf.png" alt="디마프" style="--h:32"></div>
+        <div class="cell"><span class="cat">Baby</span><img src="logos/poled.png" alt="폴레드" style="--h:32"></div>
+        <div class="cell"><span class="cat">Loungewear</span><img src="logos/hubbish.png" alt="허비쉬" style="--h:20"></div>
+        <div class="cell"><span class="cat">Skincare</span><img src="logos/naturemedy.png" alt="네츄레메디" style="--h:26"></div>
+        <div class="cell"><span class="cat">Mattress</span><img src="logos/sooneehome.png" alt="수니홈" style="--h:26"></div>
+        <div class="cell"><span class="cat">Supplement</span><img src="logos/younglong.png" alt="영롱" style="--h:20"></div>
+        <div class="cell"><span class="cat">Kids furniture</span><img src="logos/soopsori.png" alt="숲소리" style="--h:32"></div>
+        <a class="cell cta" href="#contact"><span class="cat">Next partner</span><span class="nm">다음 파트너가 되어 주세요</span><span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="services" style="padding-top:0">
+    <div class="wrap g">
+      <div class="sec-head"><span class="lab">Services</span><span class="lab">04</span></div>
+      <div class="svc">
+        <div class="t"><span class="en">Branded content</span><span class="kr">브랜디드 콘텐츠</span></div>
+        <div class="d">
+          <p>크리에이터가 제품을 먼저 써 본 뒤 릴스·피드·스토리로 기획합니다. 브랜드는 포지티 한 창구와 이야기합니다.</p>
+          <ul><li>콘텐츠 기획안<span>PLAN</span></li><li>촬영과 편집<span>SHOOT</span></li><li>브랜드 피드백 반영<span>REVIEW</span></li><li>업로드 후 결과 공유<span>REPORT</span></li></ul>
+        </div>
+      </div>
+      <div class="svc rev">
+        <div class="t"><span class="en">Creator market</span><span class="kr">크리에이터 마켓</span></div>
+        <div class="d">
+          <p>크리에이터 채널에서 기간을 정해 공동구매를 엽니다. 오픈 전 알림부터 마감 뒤 정리까지 포지티가 운영합니다.</p>
+          <ul><li>제품 구성 제안<span>OFFER</span></li><li>오픈 알림 운영<span>NOTICE</span></li><li>고객 문의 응대<span>CS</span></li><li>마감 후 결산 리포트<span>REPORT</span></li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process sec dark">
+    <div class="wrap g">
+      <div class="sec-head"><span class="lab">How it works</span><span class="lab">05</span></div>
+      <h2 class="k">써 보는 데서 시작해서,<br>숫자로 정리하고 끝냅니다.</h2>
+      <ol class="steps">
+        <li><span class="d">D-21</span><b>직접 사용</b><span>제품을 먼저 받아 생활에서 써 봅니다.</span></li>
+        <li><span class="d">D-14</span><b>기획안</b><span>어떤 장면으로 보여줄지 정리해 공유합니다.</span></li>
+        <li><span class="d">D-10</span><b>촬영·피드백</b><span>촬영본을 브랜드와 확인하고 다듬습니다.</span></li>
+        <li><span class="d">D-Day</span><b>업로드·오픈</b><span>콘텐츠를 올리거나 마켓을 엽니다.</span></li>
+        <li><span class="d">D+7</span><b>결산</b><span>반응과 판매를 정리해 전달합니다.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact sec" id="contact">
+    <div class="wrap g">
+      <div class="sec-head"><span class="lab">Contact</span><span class="lab">06</span></div>
+      <p class="lead">제품, 원하는 진행 방식, 희망 일정을 적어 보내 주세요.</p>
+      <div class="email" id="mail">contact@positi.kr</div>
+      <div class="who"><b>정시현 팀장</b> · Business Partnership</div>
+      <button class="copy" id="copyBtn" type="button">메일 주소 복사</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap g">
+    <div>포지티 크리에이티브 스튜디오 · 사업자등록번호 184-11-02511</div>
+    <div>© 2026 POSITI</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('copyBtn').addEventListener('click',function(){
+  var b=this,t='contact@positi.kr';
+  function done(){b.textContent='복사됨';setTimeout(function(){b.textContent='메일 주소 복사'},1600)}
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
+  try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}
+});
+
+(function(){var p=document.getElementById('por');if(!p)return;
+p.addEventListener('click',function(){p.classList.toggle('on')});
+p.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();p.classList.toggle('on')}});
+if(window.matchMedia&&matchMedia('(hover:none)').matches){var h=p.querySelector('.hint');if(h)h.textContent='Tap';}})();
+</script>
+
+</body>
+</html>
