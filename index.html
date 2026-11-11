@@ -34,6 +34,7 @@
   color-scheme:light;
 }
 *{box-sizing:border-box}
+html,body{margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;word-break:keep-all;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1360px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -177,6 +178,13 @@ footer{padding-block:28px 40px;font-size:12px;color:var(--mute);border-top:1px s
 footer .g div:first-child{grid-column:1/8}
 footer .g div:last-child{grid-column:8/13;text-align:right;font-family:var(--mono)}
 @media(max-width:899px){footer .g div{grid-column:1/13!important;text-align:left!important}}
+
+.contact.dark .lead{color:#F1EBE4}
+.contact.dark .email{border-color:#F1EBE4;color:#F1EBE4}
+.contact.dark .who{color:#DCCFC3}
+.contact.dark .copy{background:#F1EBE4;color:var(--hero)}
+.contact.dark .copy:hover{background:#fff}
+footer.dark{border-top:1px solid var(--rule-ink);color:var(--mute-ink)}
 </style>
 
 </head>
@@ -282,7 +290,7 @@ footer .g div:last-child{grid-column:8/13;text-align:right;font-family:var(--mon
     </div>
   </section>
 
-  <section class="contact sec" id="contact">
+  <section class="contact sec dark" id="contact">
     <div class="wrap g">
       <div class="sec-head"><span class="lab">Contact</span><span class="lab">05</span></div>
       <p class="lead">제품, 원하는 진행 방식, 희망 일정을 적어 보내 주세요.</p>
@@ -293,7 +301,7 @@ footer .g div:last-child{grid-column:8/13;text-align:right;font-family:var(--mon
   </section>
 </main>
 
-<footer>
+<footer class="dark">
   <div class="wrap g">
     <div>포지티 크리에이티브 스튜디오 · 사업자등록번호 184-11-02511</div>
     <div>© 2026 POSITI</div>
